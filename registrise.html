@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Registri-se</title>
+</head>
+<body>
+  <div class="login-container1">
+    <h1>Criar uma conta</h1>
+    <form>
+      <div class="input-group">
+        <label for="email">E-MAIL</label>
+        <input type="text" id="email" required>
+        <i class="fas fa-envelope icon"></i>
+      </div>
+
+      <div class="input-group">
+        <label for="username">NOME DE USUÁRIO</label>
+        <input type="text" id="username" required>
+        <i class="fas fa-envelope icon"></i>
+      </div>
+
+      <div class="input-group">
+        <label for="password">SENHA</label>
+        <input type="password" id="password" required>
+        <i class="fas fa-lock icon"></i>
+    
+      </div>
+
+      <div class="input-group1">
+        <label>Data de Nascimento</label>
+      </div>
+      <div class="input-group">
+        
+        <label for="day"></label>
+  <select id="day" required>
+    <option value="">Dia</option>
+    <script>
+      for (var i = 1; i <= 31; i++) {
+        var optionValue = i < 10 ? "0" + i : i;
+        document.write('<option value="' + optionValue + '">' + optionValue + '</option>');
+      }
+    </script>
+        </select>
+          <label for="month"></label>
+          <select id="month" required>
+            <option value="">Mês</option>
+            <script>
+              var months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+              for (var i = 0; i < months.length; i++) {
+                var optionValue = (i + 1 < 10) ? "0" + (i + 1) : (i + 1);
+                document.write('<option value="' + optionValue + '">' + months[i] + '</option>');
+              }
+            </script>
+          </select>
+          <label for="year"></label>
+          <select id="year" required>
+            <option value="">Ano</option>
+            <script>
+              var currentYear = new Date().getFullYear();
+              for (var i = currentYear - 100; i <= currentYear; i++) {
+                document.write('<option value="' + i + '">' + i + '</option>');
+              }
+            </script>
+          </select>
+        </select>
+      </div>
+      <div class="button-group">
+        <button type="submit">Entrar</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
